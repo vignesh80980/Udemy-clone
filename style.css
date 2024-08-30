@@ -38,45 +38,55 @@ body {
 
 .navbar__s2 input {
     border: none;
-font-size: 16px;
-background-color: transparent;
+    font-size: 16px;
+    background-color: transparent;
     width: 100%;
 }
-.navbar__s2 input:focus{
+
+.navbar__s2 input:focus {
     outline: none;
 }
-.navbar__s3{
+
+.navbar__s3 {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-.mylearning{
+
+.navbar__4 {
+    display: none;
+}
+
+.mylearning {
     position: relative;
     cursor: pointer;
 }
-.mylearning__popup{
+
+.mylearning__popup {
     position: absolute;
     background-color: white;
     border: solid black 1px;
     width: 100px;
-    top:150%;
+    top: 150%;
     border-radius: 8px;
     padding: 20px;
     display: none;
 }
-.mylearning:hover .mylearning__popup{
+
+.mylearning:hover .mylearning__popup {
     display: block;
 
 }
 
-.catagories{
+.catagories {
     display: flex;
     justify-content: space-around;
     padding: 10px;
     border-bottom: solid black 1PX;
 
 }
-.catagories P{
+
+.catagories P {
     background-color: #A435F0;
     letter-spacing: 1px;
     color: white;
@@ -85,25 +95,29 @@ background-color: transparent;
     cursor: pointer;
     border: solid #A435F0 1px;
 }
-.catagories p:hover{
+
+.catagories p:hover {
     transition: 1s;
     background-color: transparent;
-    color:black;
+    color: black;
     border: solid #A435F0 1px;
 }
-.sale-image img{
+
+.sale-image img {
     width: 100%;
 
 }
-.sale-image{
+
+.sale-image {
     position: relative;
 }
-.sale-image__offer{
+
+.sale-image__offer {
     background-color: white;
     border: none;
-    width: 500px;
     padding: 20px;
-    height: 100px;
+    flex-grow: 1;
+    flex-basis: 10%;
     position: absolute;
     top: 100px;
     left: 50px;
@@ -113,78 +127,94 @@ background-color: transparent;
     opacity: 0;
     animation-fill-mode: forwards;
 }
-@keyframes zoom{
-    0%{
-        transform:scale(0);
+
+@keyframes zoom {
+    0% {
+        transform: scale(0);
         opacity: 0;
     }
 
-    100%{
-        transform:scale(1);
+    100% {
+        transform: scale(1);
         opacity: 1;
 
     }
 }
-.recommended{
+
+.recommended {
     padding: 10px;
 
 }
-.course-card{
-    width: 270px;
+
+.course-card {
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
 }
-.course-card img{
+
+.course-card img {
     width: 100%;
     height: 50%;
 }
-.recommended__container{
+
+.recommended__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
 
 }
-.topics{
+
+.topics {
     padding: 10px;
 }
-.topics__container{
+
+.topics__container {
     display: flex;
     gap: 10px;
     margin-top: 10px;
     flex-wrap: wrap;
 
 }
-.topics__container p{
+
+.topics__container p {
     border: solid gray 2px;
     padding: 10px;
     flex-grow: 1;
     flex-basis: 25%;
-    
+
 }
-.popular{
+
+.popular {
     padding: 10px;
 }
-.popular__container{
+
+.popular__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 10px;
 }
-.footer{
+
+.footer {
     padding: 30px;
     background-color: black;
     color: white;
 }
-.footer__one{
+
+.footer__one {
     display: flex;
     gap: 10px;
     cursor: pointer;
 
 }
-.footer__one p{
-    margin: 20px; 
+
+.footer__one p {
+    margin: 20px;
 
 }
-.footer__one p:hover{
+
+.footer__one p:hover {
     background-color: #A435F0;
     border: solid white 2px;
     color: black;
@@ -192,9 +222,42 @@ background-color: transparent;
     transition: 1s;
     border-radius: 8px;
 }
-.footer__two{
+
+.footer__two {
     display: flex;
     margin: 20px;
     align-items: center;
     justify-content: space-between;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        font-size: 10px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .course-card {
+        flex-basis: 40%;
+    }
+
+    .catagories {
+        display: none;
+    }
+
+    .navbar__s2,
+    .navbar__s3 {
+        display: none;
+
+    }
+
+    .navbar__4 {
+        display: block;
+        cursor: pointer;
+    }
+    .sale-image__offer{
+        flex-basis: 5%;
+    }
+
 }
